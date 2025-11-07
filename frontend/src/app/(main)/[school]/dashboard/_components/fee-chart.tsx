@@ -1,15 +1,14 @@
 'use client';
 
 import React from 'react';
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts';
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription
+  CardDescription,
 } from '@/components/ui/card';
-
 
 interface FeeChartProps {
   data: { month: string; collected: number }[];
@@ -17,37 +16,54 @@ interface FeeChartProps {
 
 export const FeeChart = ({ data }: FeeChartProps) => {
   return (
-    <Card>
+    <Card className="bg-black border-2 border-green-500/20 hover:border-green-500/30 transition-colors duration-300">
       <CardHeader>
-        <CardTitle>Fee Collection Analysis</CardTitle>
-        <CardDescription>Total amount collected per month.</CardDescription>
+        <CardTitle className="text-2xl font-bold text-white">
+          Fee Collection Overview
+        </CardTitle>
+        <CardDescription className="text-gray-400">
+          Monthly fee collection for the last 6 months.
+        </CardDescription>
       </CardHeader>
       <CardContent className="pl-2">
         <ResponsiveContainer width="100%" height={350}>
           <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(34, 197, 94, 0.1)" />
             <XAxis
               dataKey="month"
-              stroke="#525252"
+              stroke="#9ca3af"
               fontSize={12}
               tickLine={false}
               axisLine={false}
             />
             <YAxis
-              stroke="#525252"
+              stroke="#9ca3af"
               fontSize={12}
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => `KES ${Number(value) / 1000}k`}
             />
             <Tooltip
-              cursor={{ fill: 'transparent' }}
+              cursor={{ fill: 'rgba(34, 197, 94, 0.1)' }}
               contentStyle={{
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                border: '1px solid #ccc',
+                backgroundColor: '#000000',
+                border: '2px solid rgba(34, 197, 94, 0.3)',
                 borderRadius: '0.5rem',
+                color: '#ffffff',
               }}
+              labelStyle={{ color: '#22c55e' }}
             />
-            <Bar dataKey="collected" fill="#16a34a" radius={[4, 4, 0, 0]} />
+            <Bar
+              dataKey="collected"
+              fill="url(#greenGradient)"
+              radius={[8, 8, 0, 0]}
+            />
+            <defs>
+              <linearGradient id="greenGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#22c55e" stopOpacity={1}/>
+                <stop offset="100%" stopColor="#16a34a" stopOpacity={0.8}/>
+              </linearGradient>
+            </defs>
           </BarChart>
         </ResponsiveContainer>
       </CardContent>

@@ -55,10 +55,8 @@ export default async function DashboardPage({
         <StatCard title="Fees Due" value={dashboard.stats.fees_due} />
       </div>
       
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-             <FeeChart data={dashboard.chartData} />
-          </div>
+      <div className="w-full">
+        <FeeChart data={dashboard.chartData} />
       </div>
 
       <ModuleGrid modules={dashboard.modules} schoolId={schoolId} />
