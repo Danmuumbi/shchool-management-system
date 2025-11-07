@@ -1,0 +1,28 @@
+{
+  "greenschool": {
+    "stats": {
+      "students": 521,
+      "teachers": 45,
+      "fees_due": "KES 1,250,000"
+    },
+    "chartData": [
+      { "month": "Jan", "collected": 400000 },
+      { "month": "Feb", "collected": 300000 },
+      { "month": "Mar", "collected": 550000 },
+      { "month": "Apr", "collected": 450000 },
+      { "month": "May", "collected": 620000 },
+      { "month": "Jun", "collected": 700000 }
+    ],
+    "modules": [
+      { "title": "Teachers", "href": "/teachers", "icon": "Users" },
+      { "title": "Students", "href": "/students", "icon": "GraduationCap" },
+      { "title": "Fees & Finance", "href": "/fees", "icon": "DollarSign" },
+      { "title": "Events & Noticeboard", "href": "/events", "icon": "Calendar" },
+      { "title": "AI Insights", "href": "/reports", "icon": "BrainCircuit" },
+      { "title": "Messaging", "href": "/messages", "icon": "MessageSquare" },
+      { "title": "Timetable", "href": "/timetable", "icon": "Clock" },
+      { "title": "Library", "href": "/library", "icon": "Library" },
+      { "title": "Settings", "href": "/settings", "icon": "Settings" }
+    ]
+  }
+}

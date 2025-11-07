@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Black background */
+  --background: 0 0% 7%;
+  /* White text */
+  --foreground: 0 0% 98%;
+  /* Dark card background */
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 98%;
+  /* Dark popover */
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 98%;
+  /* Vibrant green primary */
+  --primary: 142 76% 36%;
+  --primary-foreground: 0 0% 100%;
+  /* Dark secondary */
+  --secondary: 0 0% 14%;
+  --secondary-foreground: 0 0% 98%;
+  /* Muted dark gray */
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 64%;
+  /* Dark accent with slight green tint */
+  --accent: 142 20% 18%;
+  --accent-foreground: 142 76% 36%;
+  /* Red for destructive */
+  --destructive: 0 84% 60%;
+  /* Subtle borders */
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  /* Green ring */
+  --ring: 142 76% 36%;
+  /* Chart colors with green theme */
+  --chart-1: 142 76% 36%;
+  --chart-2: 173 80% 40%;
+  --chart-3: 160 84% 39%;
+  --chart-4: 142 71% 45%;
+  --chart-5: 125 65% 41%;
+}
+
+.dark {
+  --background: 0 0% 7%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 142 76% 36%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 14%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 64%;
+  --accent: 142 20% 18%;
+  --accent-foreground: 142 76% 36%;
+  --destructive: 0 84% 60%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 142 76% 36%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Subtle grid pattern */
+    background-image: 
+      linear-gradient(to right, rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}

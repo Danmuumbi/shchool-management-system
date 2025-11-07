@@ -1,0 +1,12 @@
+[
+  {
+    "id": "greenschool",
+    "name": "Green School",
+    "motto": "Nurturing Future Leaders",
+    "logo": "/logo.svg",
+    "colors": {
+      "primary": "#16a34a",
+      "secondary": "#f0fdf4"
+    }
+  }
+]
